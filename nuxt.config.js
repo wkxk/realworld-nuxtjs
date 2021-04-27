@@ -42,6 +42,10 @@ module.exports = {
       ])
     }
   },
+  server: {
+    host: '0.0.0.0',
+    port: 3000
+  },
   // 注册插件，全局请求拦截设置token
   plugins: [
     '~/plugins/request.js',
