@@ -58,4 +58,4 @@ jobs:
           wget https://github.com/wkxk/realworld-nuxtjs/releases/latest/download/release.tgz -O release.tgz
           tar zxvf release.tgz
           npm install --production
-          pm2 reload ecosystem.config.j
+          pm2 reload ecosystem.config.js
