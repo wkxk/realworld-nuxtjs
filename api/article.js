@@ -1,7 +1,7 @@
 import { request } from '@/plugins/request'
 
 // 获取公共文章列表
-export const getAticles = params => {
+export const getArticles = params => {
   return request({
     method: 'GET',
     url: '/api/articles',
@@ -56,5 +56,22 @@ export const getComments = slug => {
   return request({
     method: 'GET',
     url: `/api/articles/${slug}/comments`
+  })
+}
+
+// 写文章评论
+export const writeComments = (slug, data) => {
+  return request({
+    method: 'POST',
+    url: `/api/articles/${slug}/comments`,
+    data
+  })
+}
+
+// 删除文章评论
+export const deleteComments = (slug, id) => {
+  return request({
+    method: 'DELETE',
+    url: `/api/articles/${slug}/comments/${id}`
   })
 }

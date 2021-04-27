@@ -175,7 +175,7 @@
 <script>
 import { mapState } from "vuex";
 import { 
-  getAticles, 
+  getArticles, 
   getTags, 
   getFeedArticles,
   favoriteArticle,
@@ -200,7 +200,7 @@ export default {
     const tag = query.tag
     const page = parseInt(query.page) || 1;
     const offset = (page - 1) * limit;
-    const articlesFn = tab === 'global_feed' ? getAticles : getFeedArticles
+    const articlesFn = tab === 'global_feed' ? getArticles : getFeedArticles
     const [articleRes, tagsRes] = await Promise.all([
       articlesFn({
         limit,

@@ -6,7 +6,7 @@ export const request = axios.create({
 })
 
 export default ({ store }) => {
-  // 响应拦截器
+  // 请求拦截器，设置统一的token
   request.interceptors.request.use(config => {
     const { user } = store.state
     if (user && user.token) {
