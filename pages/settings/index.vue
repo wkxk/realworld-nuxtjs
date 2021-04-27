@@ -47,6 +47,10 @@
               </button>
             </fieldset>
           </form>
+
+          <button class="btn btn-outline-danger" @click="logout">
+            Or click here to logout.
+          </button>
         </div>
       </div>
     </div>
@@ -54,9 +58,17 @@
 </template>
 
 <script>
+const Cookie = process.client ? require('js-cookie') : undefined
 export default {
   name: "settingsPage",
-  middleware: 'authenticated'
+  middleware: 'authenticated',
+  methods: {
+    logout () {
+      Cookie.remove('user')
+      this.$store.commit('setUserInfo', null)
+      this.$router.push('/')
+    }
+  }
 };
 </script>
 
